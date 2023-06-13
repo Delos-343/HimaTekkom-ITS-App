@@ -12,18 +12,20 @@ const Screen2 = () => {
       <TouchableOpacity onPress={() => navigation.navigate('NewsItem', { item })}>
         <View style={styles.container}>
           <Image
-            source={{ uri: post.featuredImage.url }}
+                   /* post.featuredImage.url */
+            source={{ uri: image.Image }}
             style={{ width: 100, height: 100, marginRight: 10 }}
           />
           <View style={styles.newsreel}>
             <Text style={styles.title}>
-              {/* item.title */}
-              {post.title}
+              {/* post.title */}
+              {item.title}
             </Text>
             <Text style={styles.date}>
-              {/* item.date */}
-              {moment(post.createdAt).format("MM/DD/YYYY")}
+              {/* moment(post.createdAt).format("MM/DD/YYYY") */}
+              {item.date}
             </Text>
+            {/* post.content */}
             <Text numberOfLines={3}>{item.content}</Text>
           </View>
         </View>
