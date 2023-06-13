@@ -7,6 +7,7 @@ import Screen1 from './components/Screen1';
 import Screen2 from './components/Screen2';
 import Screen3 from './components/Screen3';
 import NewsItem from './components/ScreenNews';
+import { testScreen } from './components/testScreen';
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,7 @@ const App = () => {
         <Stack.Screen name="Screen2" component={Screen2}  options={{ title: 'Berita' }} />
         <Stack.Screen name="Screen3" component={Screen3}  />
         <Stack.Screen name="NewsItem" component={NewsItem} options={{ title: 'Detail Berita' }} />
+        <Stack.Screen name="testScreen" component={testScreen} options={{ title: 'Testing Environment' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

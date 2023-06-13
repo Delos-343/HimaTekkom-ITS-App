@@ -5,6 +5,7 @@ import Screen1 from '../components/Screen1';
 import Screen2 from '../components/Screen2';
 import Screen3 from '../components/Screen3';
 import { Ionicons } from '@expo/vector-icons';
+import { testScreen } from './testScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -29,15 +30,18 @@ export default function HomeScreen({ navigation }) {
             iconName = 'newspaper-outline';
           } else if (route.name === 'Radio') {
             iconName = 'radio-outline';
+          } else if (route.name === 'Test') {
+            iconName = 'user-outline';
           }
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
       })}
     >
-      <Tab.Screen name="BERANDA" component={Screen1} styles={{ fontFamily: 'serif', backgroundColor: '#0C0C0C' }} />
+      <Tab.Screen name="BERANDA" component={Screen1} />
       <Tab.Screen name="BERITA" component={Screen2} />
       <Tab.Screen name="RADIO" component={Screen3} />
+      <Tab.Screen name="TEST" component={testScreen} />
     </Tab.Navigator>
   );
 }
