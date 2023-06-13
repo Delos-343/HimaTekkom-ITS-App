@@ -16,7 +16,7 @@ const Screen2 = () => {
         <View style={styles.container}>
           <Image
                    /* post.featuredImage.url */
-            source={{ uri: image.Image }}
+            source={{ uri: item.image }}
             style={{ width: 100, height: 100, marginRight: 10 }}
           />
           <View style={styles.newsreel}>
