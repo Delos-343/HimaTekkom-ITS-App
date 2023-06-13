@@ -25,7 +25,7 @@ const App = ({ posts, post }) => {
         <Stack.Screen name="Screen3" component={Screen3}  />
         <Stack.Screen name="NewsItem" component={NewsItem} options={{ title: 'Detail Berita' }} />
 
-        {/* <Stack.Screen name="TestScreen" component={TestScreen} options={{ title: 'Testing Environment' }} /> */}
+        <Stack.Screen name="TestScreen" component={TestScreen} options={{ title: 'Testing Environment' }} />
 
       </Stack.Navigator>
     </NavigationContainer>
