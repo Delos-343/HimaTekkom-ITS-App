@@ -17,7 +17,11 @@ export default function Screen1() {
           HIMATEKKOM ITS dilatarbelakangi
           oleh kondisi mahasiswa teknik komputer ITS yang
           masih dinaungi oleh himpunan induk, HIMATEKTRO
-          ITS. Adapun keresahan yang dimiliki oleh 
+          ITS.
+          
+          <br /><br />
+          
+          Adapun keresahan yang dimiliki oleh 
           mahasiswa Teknik Komputer ITS antara lain isu
           keprofesian, pengembangan mahasiswa, dan 
           harmonisasi antar mahasiswa, serta cita-cita
