@@ -2,24 +2,27 @@ import React from 'react';
 import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import newsData from '../data/newsData.json';
+import moment from 'moment';
 
 const Screen2 = () => {
   const navigation = useNavigation();
 
-  const renderNewsItem = ({ item }) => {
+  const renderNewsItem = ({ item, post }) => {
     return (
       <TouchableOpacity onPress={() => navigation.navigate('NewsItem', { item })}>
         <View style={styles.container}>
           <Image
-            source={{ uri: item.image }}
+            source={{ uri: post.featuredImage.url }}
             style={{ width: 100, height: 100, marginRight: 10 }}
           />
           <View style={styles.newsreel}>
             <Text style={styles.title}>
-              {item.title}
+              {/* item.title */}
+              {post.title}
             </Text>
             <Text style={styles.date}>
-              {item.date}
+              {/* item.date */}
+              {moment(post.createdAt).format("MM/DD/YYYY")}
             </Text>
             <Text numberOfLines={3}>{item.content}</Text>
           </View>
