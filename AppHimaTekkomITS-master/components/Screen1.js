@@ -14,7 +14,15 @@ export default function Screen1() {
           LIVE NOW
         </Text>
         <Text style={styles.bodyText}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          HIMATEKKOM ITS dilatarbelakangi
+          oleh kondisi mahasiswa teknik komputer ITS yang
+          masih dinaungi oleh himpunan induk, HIMATEKTRO
+          ITS. Adapun keresahan yang dimiliki oleh 
+          mahasiswa Teknik Komputer ITS antara lain isu
+          keprofesian, pengembangan mahasiswa, dan 
+          harmonisasi antar mahasiswa, serta cita-cita
+          bersama untuk dapat menaungi dan melayani
+          secara mandiri kebutuhan mahasiswanya.
         </Text>
       </View>
     </View>
