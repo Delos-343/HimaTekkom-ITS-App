@@ -5,7 +5,7 @@ import Screen1 from '../components/Screen1';
 import Screen2 from '../components/Screen2';
 import Screen3 from '../components/Screen3';
 import { Ionicons } from '@expo/vector-icons';
-import { testScreen } from './testScreen';
+import { testScreen } from './TestScreen';
 
 
 const Tab = createBottomTabNavigator();
