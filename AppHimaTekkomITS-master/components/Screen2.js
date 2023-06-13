@@ -2,12 +2,11 @@ import React from 'react';
 import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import newsData from '../data/newsData.json';
-import '../data/hyGraph'
 
 const Screen2 = () => {
   const navigation = useNavigation();
 
-  const renderNewsItem = ({ deskripsi, title, konten, image }) => {
+  const renderNewsItem = ({ item }) => {
     return (
       <TouchableOpacity onPress={() => navigation.navigate('NewsItem', { item })}>
         <View style={styles.container}>
