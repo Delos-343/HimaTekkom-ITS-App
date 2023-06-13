@@ -18,7 +18,7 @@ const Screen3 = () => {
     try {
       if (sound === null) {
         const { sound: newSound } = await Audio.Sound.createAsync(
-          { uri: 'https://us1freenew.listen2myradio.com/live.mp3?typeportmount=s1_14239_stream_299257626' },
+          { uri: 'https://digital.danubestreamwaves.org/wp-content/uploads/2021/03/BFR-API1.mp4' },
           { shouldPlay: true }
         );
         setSound(newSound);
@@ -60,6 +60,8 @@ const Screen3 = () => {
   const playSound = async () => {
     if (sound === null) {
       const { sound: newSound } = await Audio.Sound.createAsync(
+             // https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3
+             // https://digital.danubestreamwaves.org/wp-content/uploads/2021/03/BFR-API1.mp4
         { uri: 'https://us1freenew.listen2myradio.com/live.mp3?typeportmount=s1_14239_stream_299257626' },
         { shouldPlay: true }
       );
