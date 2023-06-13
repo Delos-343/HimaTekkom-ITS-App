@@ -23,6 +23,10 @@ export const getNews = async() => {
                 }
             }
         }
-    `
+    `;
+
+    const result = await request(graphqlAPI, query);
+
+    return result.newssConnection.edges;
 }
   
