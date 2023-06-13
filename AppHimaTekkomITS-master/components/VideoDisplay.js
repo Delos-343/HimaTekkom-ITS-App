@@ -32,7 +32,6 @@ export default function VideoDisplay() {
 
 const styles = StyleSheet.create({
   btn: {
-    marginTop: '1rem',
-    marginBottom: '0.5rem',
+    marginVertical: '0.5rem',
   },
 });
