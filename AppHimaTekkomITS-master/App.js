@@ -8,10 +8,11 @@ import Screen2 from './components/Screen2';
 import Screen3 from './components/Screen3';
 import NewsItem from './components/ScreenNews';
 import { testScreen } from './components/testScreen';
+import { getPosts } from './data/hyGraph';
 
 const Stack = createStackNavigator();
 
-const App = () => {
+const App = ({ posts, post }) => {
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -24,7 +25,15 @@ const App = () => {
         <Stack.Screen name="Screen2" component={Screen2}  options={{ title: 'Berita' }} />
         <Stack.Screen name="Screen3" component={Screen3}  />
         <Stack.Screen name="NewsItem" component={NewsItem} options={{ title: 'Detail Berita' }} />
-        <Stack.Screen name="testScreen" component={testScreen} options={{ title: 'Testing Environment' }} />
+
+      {posts.map((post) => 
+        <Stack.Screen
+          name="testScreen" component={testScreen}
+          options={{ title: 'Testing Environment' }}
+          post={post.node} key={post.title}
+        />
+      )}
+
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -7,29 +7,25 @@ import moment from 'moment';
 export const testScreen = () => {
   const navigation = useNavigation();
 
-  const renderNewsItem = ({ item, post }) => {
+  const renderNewsItem = ({ post }) => {
 
     console.log(post);
 
     return (
-      <TouchableOpacity onPress={() => navigation.navigate('NewsItem', { item })}>
+      <TouchableOpacity onPress={() => navigation.navigate('NewsItem', { post })}>
         <View style={styles.container}>
           <Image
-                   /* post.featuredImage.url */
-            source={{ uri: item.image }}
+            source={{ uri: post.featuredImage.url }}
             style={{ width: 100, height: 100, marginRight: 10 }}
           />
           <View style={styles.newsreel}>
             <Text style={styles.title}>
-              {/* post.title */}
-              {item.title}
+              {post.title}
             </Text>
             <Text style={styles.date}>
-              {/* moment(post.createdAt).format("MM/DD/YYYY") */}
-              {item.date}
+              {moment(post.createdAt).format("MM/DD/YYYY")}
             </Text>
-            {/* post.content */}
-            <Text numberOfLines={3}>{item.content}</Text>
+            <Text numberOfLines={3}>{post.content}</Text>
           </View>
         </View>
       </TouchableOpacity>
