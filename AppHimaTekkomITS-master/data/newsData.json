@@ -1,0 +1,56 @@
+[  
+    
+    {    "id": 1,    
+         "title": "Pemerintah Akan Gelar Uji Coba Vaksin Booster Covid-19",    
+         "date": "2 April 2023",    
+         "content": "Pemerintah akan menggelar uji coba vaksin booster Covid-19 untuk meningkatkan imunitas masyarakat terhadap virus corona. Uji coba ini akan dilakukan di beberapa daerah di Indonesia.",    
+         "image": "https://picsum.photos/id/2/200/200"
+         
+    },  
+    {    "id": 2,    
+         "title": "Dorong Investasi, Pemerintah Berencana Turunkan Pajak Perusahaan",    
+         "date": "1 April 2023",    
+         "content": "Pemerintah berencana menurunkan pajak perusahaan untuk mendorong investasi di Indonesia. Langkah ini diharapkan dapat meningkatkan pertumbuhan ekonomi di masa mendatang.",    
+         "image": "https://picsum.photos/id/2/200/200"  
+    },  
+    {    "id": 3,    
+         "title": "Indonesia Kembali Raih Medali Emas di Olimpiade 2024",    
+         "date": "31 Maret 2023",    
+         "content": "Indonesia berhasil meraih medali emas di Olimpiade 2024 yang digelar di Paris, Prancis. Prestasi ini merupakan kebanggaan bagi bangsa Indonesia dan diharapkan dapat menjadi motivasi untuk lebih meningkatkan prestasi di masa depan.",    
+         "image": "https://picsum.photos/id/1/200/200"
+ 
+         
+    },
+    {    "id": 4,    
+         "title": "Indonesia Kembali Raih Medali Emas di Olimpiade 2024",    
+         "date": "31 Maret 2023",    
+         "content": "Indonesia berhasil meraih medali emas di Olimpiade 2024 yang digelar di Paris, Prancis. Prestasi ini merupakan kebanggaan bagi bangsa Indonesia dan diharapkan dapat menjadi motivasi untuk lebih meningkatkan prestasi di masa depan.",    
+         "image": "https://picsum.photos/id/1/200/200"
+ 
+         
+    },
+    {    "id": 5,    
+         "title": "Indonesia Kembali Raih Medali Emas di Olimpiade 20211",    
+         "date": "31 Maret 2023",    
+         "content": "Indonesia berhasil meraih medali emas di Olimpiade 2024 yang digelar di Paris, Prancis. Prestasi ini merupakan kebanggaan bagi bangsa Indonesia dan diharapkan dapat menjadi motivasi untuk lebih meningkatkan prestasi di masa depan.",    
+         "image": "https://picsum.photos/id/1/200/200"
+    },
+    {    "id": 6,    
+         "title": "Indonesia Kembali Raih Medali Emas di Olimpiade 2026",    
+         "date": "31 Maret 2023",    
+         "content": "Indonesia berhasil meraih medali emas di Olimpiade 2024 yang digelar di Paris, Prancis. Prestasi ini merupakan kebanggaan bagi bangsa Indonesia dan diharapkan dapat menjadi motivasi untuk lebih meningkatkan prestasi di masa depan.",    
+         "image": "https://picsum.photos/id/1/200/200"
+    },
+    {    "id": 7,    
+         "title": "Indonesia Kembali Raih Medali Emas di Olimpiade 2025",    
+         "date": "30 Maret 2023",    
+         "content": "Indonesia berhasil meraih medali emas di Olimpiade 2024 yang digelar di Paris, Prancis. Prestasi ini merupakan kebanggaan bagi bangsa Indonesia dan diharapkan dapat menjadi motivasi untuk lebih meningkatkan prestasi di masa depan.",    
+         "image": "https://picsum.photos/id/1/200/200"
+    },
+    {    "id": 8,    
+    "title": "Indonesia Kembali Raih Medali Emas di Olimpiade 21025",    
+    "date": "30 Maret 2023",    
+    "content": "Indonesia berhasil meraih medali emas di Olimpiade 2024 yang digelar di Paris, Prancis. Prestasi ini merupakan kebanggaan bagi bangsa Indonesia dan diharapkan dapat menjadi motivasi untuk lebih meningkatkan prestasi di masa depan.",    
+    "image": "https://picsum.photos/id/1/200/200"
+     }    
+]
