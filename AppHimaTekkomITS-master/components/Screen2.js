@@ -8,6 +8,9 @@ const Screen2 = () => {
   const navigation = useNavigation();
 
   const renderNewsItem = ({ item, post }) => {
+
+    console.log(post);
+
     return (
       <TouchableOpacity onPress={() => navigation.navigate('NewsItem', { item })}>
         <View style={styles.container}>
