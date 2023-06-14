@@ -6,19 +6,19 @@ const NEWS_REEL = gql`
       postsConnection {
       edges {
           node {
-          author {
-              name
-              id
+            author {
+                name
+                id
+            }
+            createdAt
+            slug
+            title
+            excerpt
+            featuredImage {
+                url
+            }
           }
-          createdAt
-          slug
-          title
-          excerpt
-          featuredImage {
-              url
-          }
-          }
-      }
+        }
       }
   }
 `;
