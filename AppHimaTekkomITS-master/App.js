@@ -1,6 +1,6 @@
 import React from 'react';
 import { ApolloProvider } from '@apollo/client';
-import client from './components/TestScreen';
+import client from './utils/ApolloClient';
 import MyStackNavigator from './stacks/AppStackNavigator';
 
 const App = () => {

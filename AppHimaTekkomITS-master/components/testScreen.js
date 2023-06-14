@@ -1,12 +1,7 @@
 import React from 'react';
 import { View, Text, FlatList, Image } from 'react-native';
-import { ApolloClient, InMemoryCache, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { NEWS_REEL } from '../data/hyGraph';
-
-export const client = new ApolloClient({
-  uri: process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT,
-  cache: new InMemoryCache(),
-});
 
 const TestScreen = () => {
 
