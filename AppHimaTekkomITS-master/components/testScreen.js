@@ -2,25 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import moment from 'moment';
-import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { getPosts } from '../data/hyGraph';
 
 const client = new ApolloClient({
   uri: process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT,
   cache: new InMemoryCache(),
 });
-
-const getPostsQuery = gql`
-  query getPosts {
-    posts {
-      title
-      content
-      featuredImage {
-        url
-      }
-      createdAt
-    }
-  }
-`;
 
 const TestScreen = () => {
 
@@ -29,7 +17,7 @@ const TestScreen = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    client.query(getPostsQuery).then((result) => {
+    client.query(getPosts).then((result) => {
       setPosts(result.data.posts);
     });
   }, []);
@@ -89,7 +77,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: 'gray',
     marginBottom: 5,
-    paddingVertical: '.5rem',
+    paddingVertical: '8px',
 }
 })
 

@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
       textAlign: 'justify',
       justifyContent: 'center',
       paddingHorizontal: '7%',
-      marginTop: '1rem',
+      marginTop: '16px',
     },
   });
   

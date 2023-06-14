@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     width: "50%", 
     height: "50%",
     resizeMode: 'contain',
-    paddingVertical: '1rem',
+    paddingVertical: '16px',
   },
   title: {
     fontSize: 24,
