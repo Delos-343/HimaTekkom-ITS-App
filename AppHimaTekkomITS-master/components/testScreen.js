@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, FlatList, Image } from 'react-native';
 import { ApolloClient, InMemoryCache, useQuery } from '@apollo/client';
 import { NEWS_REEL } from '../data/hyGraph';
 
