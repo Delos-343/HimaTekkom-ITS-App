@@ -7,24 +7,32 @@ const TestScreen = () => {
 
   const { loading, error, data } = useQuery(NEWS_REEL);
 
-  console.log(data);
+  console.log('Loading:', loading);
+  console.log('Error:', error);
+  console.log('Data:', data);
 
-  if (loading) return <Text> Loading... </Text>;
-  if (error) return <Text> Error : (</Text>;
+
+  if (loading) return <Text> Loading </Text>;
+  if (error) return `Error! ${error.message}`;
 
   return (
-    <FlatList
-      data={data.postsConnection.edges}
-      keyExtractor={(item) => item.node.slug}
-      renderItem={({ item }) => (
-        <View>
-          <Text>{item.node.title}</Text>
-          <Text>{item.node.author.name}</Text>
-          <Image source={{uri: item.node.featuredImage.url}} style={{height: 200, width: 200}}/>
-          <Text>{item.node.excerpt}</Text>
+    <View>
+      {data.postsConnection.edges.map((index) => (
+        <View key={index.node.slug}>
+
+          <Text> {index.node.title} </Text>
+
+          <Text> {index.node.author.name} </Text>
+
+          <Image
+            source={{uri: index.node.featuredImage.url}} style={{height: 200, width: 200}}
+          />
+          
+          <Text> {index.node.excerpt} </Text>
+
         </View>
-      )}
-    />
+      ))}
+    </View>
   );
 }
 export default TestScreen;
