@@ -3,7 +3,7 @@ import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet } from 'react
 import { useNavigation } from '@react-navigation/native';
 import moment from 'moment';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
-import { getPosts } from '../data/hyGraph';
+import { NEWS_REEL } from '../data/hyGraph';
 
 const client = new ApolloClient({
   uri: process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT,
@@ -12,50 +12,25 @@ const client = new ApolloClient({
 
 const TestScreen = () => {
 
-  const navigation = useNavigation();
+  const { loading, error, data } = useQuery(NEWS_REEL);
 
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    client.query(getPosts).then((result) => {
-      setPosts(result.data.posts);
-    });
-  }, []);
-
-  const renderNewsItem = ({ posts, post }) => {
-
-    console.log(post);
-
-    return (
-      <TouchableOpacity onPress={() => navigation.navigate('NewsItem', { post })}>
-        {posts.map((post) =>
-          <View style={styles.container}>
-            <Image
-              source={{ uri: post.featuredImage.url }}
-              style={{ width: 100, height: 100, marginRight: 10 }}
-            />
-            <View style={styles.newsreel}>
-              <Text style={styles.title}>
-                {post.title}
-              </Text>
-              <Text style={styles.date}>
-                {moment(post.createdAt).format("MM/DD/YYYY")}
-              </Text>
-              <Text numberOfLines={3}>{post.content}</Text>
-            </View>
-          </View>
-        )}
-      </TouchableOpacity>
-    );
-  };
+  if (loading) return <Text> Loading... </Text>;
+  if (error) return <Text> Error : (</Text>;
 
   return (
-    <FlatList
-      data={posts}
-      renderItem={renderNewsItem}
-      keyExtractor={(post) => post.id.toString()}
-      style={{ padding: 10 }}
-    />
+    <View>
+      <FlatList
+        data={data.edges.node}
+        keyExtractor={post => post.createdAt}
+        renderItem={({ post }) => (
+          <View>
+            <Text>{post.title}</Text>
+            <Text>{post.excerpt}</Text>
+            <Text>Published at: {post.createdAt}</Text>
+          </View>
+        )}
+      />
+    </View>
   );
 };
 
