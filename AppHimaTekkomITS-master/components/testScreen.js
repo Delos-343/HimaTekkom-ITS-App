@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, Image } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import { useQuery } from '@apollo/client';
 import { NEWS_REEL } from '../data/hyGraph';
 
