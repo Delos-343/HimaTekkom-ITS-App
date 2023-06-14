@@ -11,7 +11,6 @@ const TestScreen = () => {
   console.log('Error:', error);
   console.log('Data:', data);
 
-
   if (loading) return <Text> Loading </Text>;
   if (error) return `Error! ${error.message}`;
 
