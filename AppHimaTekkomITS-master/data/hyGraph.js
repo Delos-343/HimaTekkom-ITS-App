@@ -1,5 +1,5 @@
 import React from 'react';
-import { request, gql } from 'graphql-request';
+import { gql, useQuery } from '@apollo/client';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
