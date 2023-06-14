@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet } from 'react-native';
-import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloClient, InMemoryCache, useQuery } from '@apollo/client';
 import { NEWS_REEL } from '../data/hyGraph';
 
 const client = new ApolloClient({
@@ -12,46 +12,22 @@ const TestScreen = () => {
 
   const { loading, error, data } = useQuery(NEWS_REEL);
 
-  if (loading) return <Text> Loading... </Text>;
-  if (error) return <Text> Error : (</Text>;
+  if (loading) return <Text>Loading...</Text>;
+  if (error) return <Text>Error :(</Text>;
 
   return (
-    <View>
-      <FlatList
-        data={data.edges.node}
-        keyExtractor={item => item.createdAt}
-        renderItem={({ item }) => (
-          <View>
-            <Text>{item.title}</Text>
-            <Text>{item.excerpt}</Text>
-            <Text>Published at: {item.createdAt}</Text>
-          </View>
-        )}
-      />
-    </View>
+    <FlatList
+      data={data.postsConnection.edges}
+      keyExtractor={(item) => item.node.slug}
+      renderItem={({ item }) => (
+        <View>
+          <Text>{item.node.title}</Text>
+          <Text>{item.node.author.name}</Text>
+          <Image source={{uri: item.node.featuredImage.url}} style={{height: 200, width: 200}}/>
+          <Text>{item.node.excerpt}</Text>
+        </View>
+      )}
+    />
   );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    marginVertical: 10,
-  },
-  newsreel: {
-    flex: 1,
-    flexDirection: 'column',
-    width: 100,
-  },
-  title: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  date: {
-    fontSize: 12,
-    color: 'gray',
-    marginBottom: 5,
-    paddingVertical: '8px',
 }
-})
-
 export default TestScreen;
