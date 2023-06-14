@@ -45,15 +45,6 @@ const TestScreen = () => {
   );
 };
 
-  export async function getStaticProps() {
-
-    const posts = (await getPosts()) || []
-
-    return {
-        props: { posts }
-    }
-  }
-
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
