@@ -19,12 +19,12 @@ const TestScreen = () => {
     <View>
       <FlatList
         data={data.edges.node}
-        keyExtractor={post => post.createdAt}
-        renderItem={({ post }) => (
+        keyExtractor={item => item.createdAt}
+        renderItem={({ item }) => (
           <View>
-            <Text>{post.title}</Text>
-            <Text>{post.excerpt}</Text>
-            <Text>Published at: {post.createdAt}</Text>
+            <Text>{item.title}</Text>
+            <Text>{item.excerpt}</Text>
+            <Text>Published at: {item.createdAt}</Text>
           </View>
         )}
       />
