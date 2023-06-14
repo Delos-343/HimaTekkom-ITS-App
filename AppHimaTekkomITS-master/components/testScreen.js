@@ -9,8 +9,8 @@ const TestScreen = () => {
 
   console.log(data);
 
-  if (loading) return <Text>Loading...</Text>;
-  if (error) return <Text>Error :(</Text>;
+  if (loading) return <Text> Loading... </Text>;
+  if (error) return <Text> Error : (</Text>;
 
   return (
     <FlatList
