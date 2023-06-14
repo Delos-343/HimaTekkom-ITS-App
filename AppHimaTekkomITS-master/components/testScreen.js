@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import moment from 'moment';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { NEWS_REEL } from '../data/hyGraph';
 
