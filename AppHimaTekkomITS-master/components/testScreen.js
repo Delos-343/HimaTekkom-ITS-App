@@ -3,7 +3,7 @@ import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet } from 'react
 import { useNavigation } from '@react-navigation/native';
 import moment from 'moment';
 import { getPostsQuery } from '../data/hyGraph';
-import { ApolloClient } from 'apollo-client';
+import { ApolloClient } from 'apollo/client';
 import { ApolloProvider } from 'react-apollo';
 
 const TestScreen = () => {
