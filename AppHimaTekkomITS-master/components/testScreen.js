@@ -14,7 +14,7 @@ const TestScreen = () => {
 
   const fetchPosts = async () => {
     const client = new ApolloClient({
-      // Your API endpoint here
+      GET(process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT);
     });
 
     const { data } = await client.query(getPostsQuery);
