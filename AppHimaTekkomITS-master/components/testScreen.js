@@ -11,6 +11,8 @@ const client = new ApolloClient({
 const TestScreen = () => {
 
   const { loading, error, data } = useQuery(NEWS_REEL);
+  
+  console.log(data);
 
   if (loading) return <Text>Loading...</Text>;
   if (error) return <Text>Error :(</Text>;
