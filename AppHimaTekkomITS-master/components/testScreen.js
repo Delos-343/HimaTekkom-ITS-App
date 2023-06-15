@@ -44,7 +44,7 @@ const TestScreen = () => {
       ) : (
 
         <Text> Loading data . . . </Text>
-        
+
       )}
     </View>
   );
