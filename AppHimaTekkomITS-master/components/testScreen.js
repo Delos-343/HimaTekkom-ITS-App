@@ -25,26 +25,26 @@ const TestScreen = () => {
     <View>
       {data.length > 0 ? (
         data.map((newsItem) => (
+
           <View key={newsItem.id}>
             
             <Text>{newsItem.author}</Text>
-
             <Text>{newsItem.title}</Text>
-
             <Text>{newsItem.caption}</Text>
-
             <Text>{newsItem.content}</Text>
 
             <Image source={{ uri: newsItem.image }} style={{ width: 200, height: 200 }} />
 
             <Text>{new Date(newsItem.createdAt).toLocaleString()}</Text>
-
             <Text>{new Date(newsItem.updatedAt).toLocaleString()}</Text>
 
           </View>
+
         ))
       ) : (
-        <Text>Loading...</Text>
+
+        <Text> Loading data . . . </Text>
+        
       )}
     </View>
   );
