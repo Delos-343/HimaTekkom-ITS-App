@@ -9,7 +9,7 @@ const TestScreen = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(process.env.POSTMAN_API_ENDPOINT);
+        const response = await axios.get(process.env.POSTMAN_REST_API_ENDPOINT);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data: ', error);
