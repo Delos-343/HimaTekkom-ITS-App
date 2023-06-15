@@ -1,37 +1,32 @@
-import React from 'react';
-import { View, Text, Image } from 'react-native';
-import { useQuery } from '@apollo/client';
-import { NEWS_REEL } from '../data/hyGraph';
+import React, { useEffect, useState } from 'react';
+import { View, Text } from 'react-native';
+import axios from 'axios';
 
 const TestScreen = () => {
+  const [data, setData] = useState(null);
 
-  const { loading, error, data } = useQuery(NEWS_REEL);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('localhost:3000');
+        setData(response.data);
+      } catch (error) {
+        console.error('Error fetching data: ', error);
+      }
+    };
 
-  console.log('Loading:', loading);
-  console.log('Error:', error);
-  console.log('Data:', data);
-
-  if (loading) return <Text> Loading </Text>;
-  if (error) return `Error! ${error.message}`;
+    fetchData();
+  }, []);
 
   return (
     <View>
-      {data.postsConnection.edges.map((index) => (
-        <View key={index.node.slug}>
-
-          <Text> {index.node.title} </Text>
-
-          <Text> {index.node.author.name} </Text>
-
-          <Image
-            source={{uri: index.node.featuredImage.url}} style={{height: 200, width: 200}}
-          />
-          
-          <Text> {index.node.excerpt} </Text>
-
-        </View>
-      ))}
+      {data ? (
+        <Text>{JSON.stringify(data)}</Text>
+      ) : (
+        <Text>Loading...</Text>
+      )}
     </View>
   );
-}
+};
+
 export default TestScreen;
