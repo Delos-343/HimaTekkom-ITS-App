@@ -9,7 +9,7 @@ const TestScreen = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/news');
+        const response = await axios.get(process.env.POSTMAN_API_ENDPOINT);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data: ', error);
@@ -17,7 +17,7 @@ const TestScreen = () => {
     };
 
     fetchData();
-  }, []);
+  }, [data]);
 
   console.log(data);
 
