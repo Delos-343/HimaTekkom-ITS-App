@@ -8,7 +8,7 @@ const TestScreen = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('localhost:3000');
+        const response = await axios.get('http://localhost:3000/news');
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data: ', error);
