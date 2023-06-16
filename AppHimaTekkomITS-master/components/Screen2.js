@@ -12,14 +12,15 @@ const Screen2 = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/news');
+        {/* ANDROID:-  http://10.0.2.2:3000/news, http://192.168.0.103:3000/news */}
+        const response = await axios.get('https://muhdaffawibi.com/news');
         const data = response.data;
         const pages = data.reduce((acc, item, index) => {
-          if (index % 6 === 0) acc.push([]);
+          if (index % 5 === 0) acc.push([]);
           acc[acc.length - 1].push(item);
           return acc;
         }, []);
-        setPages(pages.slice(0, 5)); // Keep only first five pages
+        setPages(pages.slice(0, 4)); // Keep only first five pages
       } catch (error) {
         console.error('Error fetching data: ', error);
       }
@@ -98,7 +99,6 @@ const styles = StyleSheet.create({
         fontSize: 12,
         color: 'gray',
         marginBottom: 5,
-        paddingVertical: '8px',
     },
     paginationContainer: {
         flexDirection: 'row',
@@ -109,8 +109,8 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
     },
     dot: {
-        height: 10,
-        width: 10,
+        height: 20,
+        width: 20,
         borderRadius: 5,
         marginHorizontal: 2,
         backgroundColor: '#0C0C0C',

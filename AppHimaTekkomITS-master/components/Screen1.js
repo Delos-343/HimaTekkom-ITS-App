@@ -32,40 +32,34 @@ export default function Screen1() {
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      alignItems: 'center',
-      textAlign: 'center',
-      justifyContent: 'center',
-    },
-    logo: {
-      width: "50%", 
-      height: "50%",
-      resizeMode: 'contain',
-    },
-    frameContainer: {
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    title: {
-      fontSize: 24,
-      fontWeight: 'bold',
-    },
-    square: {
-        width: 300,
-        height: 300,
-        borderWidth: 4,
-        borderRadius: 1520, // half of width or height
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
-    bodyText: {
-      fontSize: 14,
-      fontWeight: '500',
-      textAlign: 'justify',
-      justifyContent: 'center',
-      paddingHorizontal: '7%',
-      marginTop: '16px',
-    },
-  });
-  
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    marginTop: Dimensions.get('window').height * 0.4,
+  },
+  logo: {
+    width: '50%',
+    height: '50%',
+    resizeMode: 'contain',
+  },
+  title: {
+    fontSize: 40,
+    fontWeight: 'bold',
+  },
+  square: {
+    width: Dimensions.get('window').width * 0.8,
+    height: Dimensions.get('window').width * 0.8,
+    borderWidth: 4,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  bodyText: {
+    color: 'black',
+    marginTop: 10,
+    fontSize: 14,
+    fontWeight: '500',
+    textAlign: 'justify',
+    paddingHorizontal: '7%',
+  },
+});

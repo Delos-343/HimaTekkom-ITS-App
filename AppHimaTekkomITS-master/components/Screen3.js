@@ -18,7 +18,7 @@ const Screen3 = () => {
     try {
       if (sound === null) {
         const { sound: newSound } = await Audio.Sound.createAsync(
-          { uri: 'https://digital.danubestreamwaves.org/wp-content/uploads/2021/03/BFR-API1.mp4' },
+          { uri: 'https://sv3.alhasmedia.com/listen/station_34/radio' },
           { shouldPlay: true }
         );
         setSound(newSound);
