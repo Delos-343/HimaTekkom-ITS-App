@@ -1,34 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import newsData from '../data/newsData.json';
+import axios from 'axios';
 
 const Screen2 = () => {
   
   const navigation = useNavigation();
+  const [newsData, setNewsData] = useState([]);
 
-  const renderNewsItem = ({ item, post }) => {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/news');
+        setNewsData(response.data);
+      } catch (error) {
+        console.error('Error fetching data: ', error);
+      }
+    };
 
-    console.log(post);
+    fetchData();
+  }, []);
 
+  const renderNewsItem = ({ item }) => {
     return (
       <TouchableOpacity onPress={() => navigation.navigate('NewsItem', { item })}>
         <View style={styles.container}>
           <Image
-                   /* post.featuredImage.url */
             source={{ uri: item.image }}
             style={{ width: 100, height: 100, marginRight: 10 }}
           />
           <View style={styles.newsreel}>
             <Text style={styles.title}>
-              {/* post.title */}
               {item.title}
             </Text>
             <Text style={styles.date}>
-              {/* moment(post.createdAt).format("MM/DD/YYYY") */}
-              {item.date}
+              {new Date(item.createdAt).toLocaleDateString()}
             </Text>
-            {/* post.content */}
             <Text numberOfLines={3}>{item.content}</Text>
           </View>
         </View>
@@ -65,7 +72,7 @@ const styles = StyleSheet.create({
     color: 'gray',
     marginBottom: 5,
     paddingVertical: '8px',
-}
+  }
 })
 
 export default Screen2;

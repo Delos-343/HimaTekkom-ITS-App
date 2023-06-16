@@ -10,7 +10,8 @@ const SplashScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}> Aplikasi <br /> Percobaan Belajar </Text>
+      <Text style={styles.title}> Aplikasi </Text>
+      <Text style={styles.title}> Percobaan Belajar </Text>
       <Image source={require('../assets/logos/Logo_HimaTekkom-ITS.png')} style={styles.logo} />
     </View>
   );
@@ -27,12 +28,10 @@ const styles = StyleSheet.create({
     width: "50%", 
     height: "50%",
     resizeMode: 'contain',
-    paddingVertical: '16px',
   },
   title: {
     fontSize: 24,
-    fontWeight: '400',
-    fontFamily: 'DIN Pro',
+    fontWeight: 400,
     textAlign: 'center',
     letterSpacing: 3,
     color: '#0c0c0c',

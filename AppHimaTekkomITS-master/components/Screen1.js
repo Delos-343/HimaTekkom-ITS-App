@@ -19,8 +19,6 @@ export default function Screen1() {
           masih dinaungi oleh himpunan induk, HIMATEKTRO
           ITS.
           
-          <br /><br />
-          
           Adapun keresahan yang dimiliki oleh 
           mahasiswa Teknik Komputer ITS antara lain isu
           keprofesian, pengembangan mahasiswa, dan 
@@ -52,7 +50,6 @@ const styles = StyleSheet.create({
     title: {
       fontSize: 24,
       fontWeight: 'bold',
-      paddingVertical: '.25rem',
     },
     square: {
         width: 300,
@@ -65,7 +62,6 @@ const styles = StyleSheet.create({
     bodyText: {
       fontSize: 14,
       fontWeight: '500',
-      fontWeight: 'serif',
       textAlign: 'justify',
       justifyContent: 'center',
       paddingHorizontal: '7%',
