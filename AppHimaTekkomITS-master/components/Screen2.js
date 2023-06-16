@@ -15,7 +15,7 @@ const Screen2 = () => {
         const response = await axios.get('http://localhost:3000/news');
         const data = response.data;
         const pages = data.reduce((acc, item, index) => {
-          if (index % 10 === 0) acc.push([]);
+          if (index % 6 === 0) acc.push([]);
           acc[acc.length - 1].push(item);
           return acc;
         }, []);
@@ -113,6 +113,7 @@ const styles = StyleSheet.create({
         width: 10,
         borderRadius: 5,
         marginHorizontal: 2,
+        backgroundColor: '#0C0C0C',
     },
     activeDot: {
         backgroundColor: 'blue',

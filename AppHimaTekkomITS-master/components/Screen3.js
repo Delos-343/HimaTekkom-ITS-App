@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#F1F1F1',
+    backgroundColor: '#eee',
   },
   albumImage: {
     width: 250,
@@ -106,14 +106,14 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   title: {
-    color: '#fff',
+    color: '#FFA500',
     fontSize: 28,
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 10,
   },
   artist: {
-    color: '#fff',
+    color: '#2F4F4F',
     fontSize: 20,
     textAlign: 'center',
     marginBottom: 40,
