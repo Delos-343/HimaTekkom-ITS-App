@@ -6,13 +6,20 @@ import axios from 'axios';
 const Screen2 = () => {
   
   const navigation = useNavigation();
-  const [newsData, setNewsData] = useState([]);
+  const [pages, setPages] = useState([]);
+  const [activePage, setActivePage] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:3000/news');
-        setNewsData(response.data);
+        const data = response.data;
+        const pages = data.reduce((acc, item, index) => {
+          if (index % 10 === 0) acc.push([]);
+          acc[acc.length - 1].push(item);
+          return acc;
+        }, []);
+        setPages(pages.slice(0, 5)); // Keep only first five pages
       } catch (error) {
         console.error('Error fetching data: ', error);
       }
@@ -43,36 +50,74 @@ const Screen2 = () => {
     );
   };
 
+  const Pagination = ({ length, activePage, setActivePage }) => {
+    const dots = [];
+    for (let i = 0; i < length; i++) {
+      dots.push(
+        <TouchableOpacity key={i} onPress={() => setActivePage(i)}>
+          <View style={[styles.dot, activePage === i ? styles.activeDot : styles.inactiveDot]} />
+        </TouchableOpacity>
+      );
+    }
+
+    return <View style={styles.paginationContainer}>{dots}</View>
+  }
+
   return (
-    <FlatList
-      data={newsData}
-      renderItem={renderNewsItem}
-      keyExtractor={(item) => item.id.toString()}
-      style={{ padding: 10 }}
-    />
+    <View style={{flex: 1}}>
+      <FlatList
+        data={pages[activePage]}
+        renderItem={renderNewsItem}
+        keyExtractor={(item) => item.id.toString()}
+        style={{ padding: 10 }}
+      />
+      <Pagination 
+        length={pages.length} 
+        activePage={activePage} 
+        setActivePage={setActivePage} 
+      />
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    marginVertical: 10,
-  },
-  newsreel: {
-    flex: 1,
-    flexDirection: 'column',
-    width: 100,
-  },
-  title: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  date: {
-    fontSize: 12,
-    color: 'gray',
-    marginBottom: 5,
-    paddingVertical: '8px',
-  }
+    container: {
+        flexDirection: 'row',
+        marginVertical: 10,
+    },
+    newsreel: {
+        flex: 1,
+        flexDirection: 'column',
+        width: 100,
+    },
+    title: {
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+    date: {
+        fontSize: 12,
+        color: 'gray',
+        marginBottom: 5,
+        paddingVertical: '8px',
+    },
+    paginationContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'absolute',
+        bottom: 20,
+        alignSelf: 'center',
+    },
+    dot: {
+        height: 10,
+        width: 10,
+        borderRadius: 5,
+        marginHorizontal: 2,
+    },
+    activeDot: {
+        backgroundColor: 'blue',
+    },
+     
 })
 
 export default Screen2;

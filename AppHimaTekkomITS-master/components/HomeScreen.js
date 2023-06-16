@@ -5,7 +5,6 @@ import Screen1 from '../components/Screen1';
 import Screen2 from '../components/Screen2';
 import Screen3 from '../components/Screen3';
 import { Ionicons } from '@expo/vector-icons';
-import TestScreen from './TestScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -41,7 +40,6 @@ export default function HomeScreen({ navigation }) {
       <Tab.Screen name="BERANDA" component={Screen1} />
       <Tab.Screen name="BERITA" component={Screen2} />
       <Tab.Screen name="RADIO" component={Screen3} />
-      <Tab.Screen name="TEST" component={TestScreen} />
 
     </Tab.Navigator>
   );
