@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Screen1 from '../components/Screen1';
 import Screen2 from '../components/Screen2';
 import Screen3 from '../components/Screen3';
@@ -41,7 +41,7 @@ export default function HomeScreen({ navigation }) {
       <Tab.Screen name="BERANDA" component={Screen1} />
       <Tab.Screen name="BERITA" component={Screen2} />
       <Tab.Screen name="RADIO" component={Screen3} />
-      <Tab.Screen name="TestScreen" component={TestScreen} />
+      <Tab.Screen name="TEST" component={TestScreen} />
 
     </Tab.Navigator>
   );

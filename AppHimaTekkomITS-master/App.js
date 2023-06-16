@@ -20,6 +20,8 @@ const App = () => {
 
             <Stack.Screen name="NewsItem" component={NewsItem} options={{ title: 'Detail Berita' }} />
 
+            <Stack.Screen name="TestItem" component={TestScreen} options={{ title: 'Tester Tab' }} />
+
         </Stack.Navigator>
     </NavigationContainer>
   );

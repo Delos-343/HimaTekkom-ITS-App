@@ -12,10 +12,10 @@ const NewsItem = ({ route }) => {
         {item.title}
       </Text>
       <Image source={{ uri: item.image }} style={{ width: '100%', height: 200, marginBottom: 10 }} />
-      <Text style={{ fontSize: 14, color: 'gray', marginBottom: 10 }}>{item.date}</Text>
-      <Text>{item.content}</Text>
+      <Text style={{ fontSize: 14, color: 'gray', marginBottom: 10 }}> {item.date} </Text>
+      <Text> {item.content} </Text>
       <TouchableOpacity onPress={() => navigation.goBack()} style={{ marginTop: 10 }}>
-        <Text style={{ color: 'blue' }}>Kembali ke Berita</Text>
+        <Text style={{ color: 'blue' }}> Kembali ke Berita </Text>
       </TouchableOpacity>
     </View>
   );
