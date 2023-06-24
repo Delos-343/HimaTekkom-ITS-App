@@ -77,9 +77,9 @@ const Screen3 = () => {
           maximumValue={1}
           value={volume}
           onValueChange={handleVolumeChange}
-          minimumTrackTintColor="#000080"
-          maximumTrackTintColor="#000080"
-          thumbTintColor="#000080"
+          minimumTrackTintColor="#f1f1f1"
+          maximumTrackTintColor="#f1f1f1"
+          thumbTintColor="#f1f1f1"
         />
       </View>
     </View>
@@ -94,8 +94,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#eee',
   },
   albumImage: {
-    width: 325,
-    height: 325,
+    width: 300,
+    height: 300,
     marginBottom: 25,
     resizeMode: 'contain',
   },
@@ -111,18 +111,20 @@ const styles = StyleSheet.create({
     fontSize: 50,
     fontWeight: '600',
     textAlign: 'center',
-    marginBottom: 75,
+    marginBottom: 25,
     letterSpacing: 3,
   },
   slider: {
     width: 300,
-    marginTop: 30,
+    marginTop: 35,
   },
   controls: {
     width: '100%',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#000080',
+    paddingVertical: 25,
   },
   playButton: {
     borderRadius: 10,
@@ -130,12 +132,12 @@ const styles = StyleSheet.create({
     height: 75,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#000080',
+    backgroundColor: '#f1f1f1',
   },
   playButtonText: {
     fontSize: 30,
     fontWeight: 'bold',
-    color: '#F1F1F1',
+    color: '#000080',
     textAlign: 'center',
   },
 });

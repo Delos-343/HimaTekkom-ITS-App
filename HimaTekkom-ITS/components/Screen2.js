@@ -128,7 +128,8 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
-      marginBottom: 17,
+      backgroundColor: '#000080',
+      paddingVertical: 5,
     },
     paginationButton: {
       borderRadius: 10,
@@ -136,7 +137,6 @@ const styles = StyleSheet.create({
       height: 50,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#000080',
       fontSize: 33,
       fontWeight: 'bold',
       color: '#f1f1f1',

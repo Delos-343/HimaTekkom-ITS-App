@@ -6,7 +6,7 @@ export default function Screen1() {
   return (
     <View style={styles.container}>
       <View style={styles.frameContainer}>
-        <Text style={styles.title}>LIVE NOW</Text>
+        <Text style={styles.title}> LIVE NOW </Text>
 
         <View style={styles.videoContainer}>
           <VideoDisplay />
@@ -15,12 +15,12 @@ export default function Screen1() {
         <View style={styles.divider}></View>
 
         <Text style={styles.bodyText}>
-          HIMATEKKOM ITS dilatarbelakangi oleh kondisi mahasiswa teknik komputer ITS yang masih dinaungi oleh himpunan
+          HIMATEKKOM ITS dilatarbelakangi oleh kondisi mahasiswa teknik komputer ITS yang masih dinaungi olehhimpunan
           induk, HIMATEKTRO ITS.
         </Text>
         <Text style={styles.bodyText}>
-          Adapun keresahan yang dimiliki oleh mahasiswa Teknik Komputer ITS antara lain isu keprofesian, pengembangan
-          mahasiswa, dan harmonisasi antar mahasiswa, serta cita-cita bersama untuk dapat menaungi dan melayani secara
+          Adapun keresahan yang dimiliki oleh mahasiswa Teknik Komputer ITS antara lain isu keprofesian,pengembangan
+          mahasiswa, dan harmonisasi antar mahasiswa, serta cita-cita bersama untuk dapat menaungi danmelayani secara
           mandiri kebutuhan mahasiswanya.
         </Text>
       </View>
@@ -41,10 +41,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   title: {
+    color: 'red',
     fontSize: 40,
     fontWeight: 'bold',
-    paddingBottom: 50,
     paddingHorizontal: 10,
+    marginBottom: 50,
+    letterSpacing: 1.5,
+    textAlign: 'center',
   },
   videoContainer: {
     width: '100%',
@@ -56,7 +59,7 @@ const styles = StyleSheet.create({
     marginTop: 25,
   },
   bodyText: {
-    color: 'black',
+    color: '#0c0c0c',
     marginTop: 10,
     fontSize: 17,
     fontWeight: '500',

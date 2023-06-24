@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   goBackButton: {
     alignSelf: 'flex-start',
     marginBottom: 10,
-    backgroundColor: '#0c0c0c',
+    backgroundColor: '#000080',
     width: '100%',
     paddingHorizontal: 10,
   },

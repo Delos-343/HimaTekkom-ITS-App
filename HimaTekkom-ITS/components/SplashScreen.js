@@ -11,8 +11,10 @@ const SplashScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Image source={require('../assets/logos/Logo_HimaTekkom-ITS.png')} style={styles.logo} />
-      <Text style={styles.title}> Aplikasi </Text>
-      <Text style={styles.title}> Percobaan Belajar </Text>
+      <View style={styles.banner}>
+        <Text style={styles.title}> Aplikasi </Text>
+        <Text style={styles.title}> Percobaan Belajar </Text>
+      </View>
     </View>
   );
 };
@@ -28,15 +30,19 @@ const styles = StyleSheet.create({
     width: 300, 
     height: 300,
     resizeMode: 'contain',
-    marginBottom: 25,
+    marginBottom: 35,
+  },
+  banner: {
+    width: '100%',
+    backgroundColor: '#000080',
+    paddingVertical: 25,
   },
   title: {
     fontSize: 30,
     fontWeight: 500,
     textAlign: 'center',
     letterSpacing: 3,
-    color: '#0c0c0c',
-    marginTop: 50,
+    color: '#f1f1f1',
   },
 });
 
