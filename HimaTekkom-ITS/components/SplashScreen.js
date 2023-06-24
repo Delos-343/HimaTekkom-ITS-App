@@ -10,8 +10,8 @@ const SplashScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}> Aplikasi </Text>
       <Image source={require('../assets/logos/Logo_HimaTekkom-ITS.png')} style={styles.logo} />
+      <Text style={styles.title}> Aplikasi </Text>
       <Text style={styles.title}> Percobaan Belajar </Text>
     </View>
   );
