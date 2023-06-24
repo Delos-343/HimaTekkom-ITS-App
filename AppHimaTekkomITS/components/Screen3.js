@@ -18,6 +18,8 @@ const Screen3 = () => {
     try {
       if (sound === null) {
         const { sound: newSound } = await Audio.Sound.createAsync(
+          // https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3
+          // https://digital.danubestreamwaves.org/wp-content/uploads/2021/03/BFR-API1.mp4
           { uri: 'https://sv3.alhasmedia.com/listen/station_34/radio' },
           { shouldPlay: true }
         );
@@ -55,43 +57,6 @@ const Screen3 = () => {
     </View>
   );
 };
-
-  {/*
-  const playSound = async () => {
-    if (sound === null) {
-      const { sound: newSound } = await Audio.Sound.createAsync(
-             // https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3
-             // https://digital.danubestreamwaves.org/wp-content/uploads/2021/03/BFR-API1.mp4
-        { uri: 'https://us1freenew.listen2myradio.com/live.mp3?typeportmount=s1_14239_stream_299257626' },
-        { shouldPlay: true }
-      );
-      setSound(newSound);
-    } else {
-      await sound.playAsync();
-    }
-    setIsPlaying(true);
-  };
-
-  const pauseSound = async () => {
-    await sound.pauseAsync();
-    setIsPlaying(false);
-  };
-
-  return (
-    <View style={styles.container}>
-      <Image source={require('../assets/logos/Logo_HimaTekkom-ITS.png')} style={styles.albumImage} />
-      <Text style={styles.title}>Radio 1 Rock</Text>
-      <Text style={styles.artist}>Bulgaria</Text>
-      <TouchableOpacity onPress={isPlaying ? pauseSound : playSound}>
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>
-            {isPlaying ? ' ❚❚ ' : ' ▶︎ '}
-          </Text>
-        </View>
-      </TouchableOpacity>
-    </View>
-  );
-}; */}
 
 const styles = StyleSheet.create({
   container: {
