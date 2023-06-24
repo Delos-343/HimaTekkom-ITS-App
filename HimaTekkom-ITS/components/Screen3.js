@@ -57,8 +57,12 @@ const Screen3 = () => {
   return (
     <View style={styles.container}>
       <Image source={require('../assets/logos/Logo_HimaTekkom-ITS.png')} style={styles.albumImage} />
-      <Text style={styles.title}>HimaTekkom Radio</Text>
-      <Text style={styles.artist}>ITS</Text>
+      <Text style={styles.title}>
+        HimaTekkom Radio
+      </Text>
+      <Text style={styles.artist}>
+        ITS
+      </Text>
       <View style={styles.controls}>
         <TouchableOpacity onPress={isPlaying ? pauseSound : playSound}>
           <View style={styles.playButton}>
@@ -92,7 +96,7 @@ const styles = StyleSheet.create({
   albumImage: {
     width: 325,
     height: 325,
-    marginBottom: 75,
+    marginBottom: 25,
     resizeMode: 'contain',
   },
   title: {
@@ -107,7 +111,7 @@ const styles = StyleSheet.create({
     fontSize: 50,
     fontWeight: '600',
     textAlign: 'center',
-    marginBottom: 50,
+    marginBottom: 75,
   },
   slider: {
     width: 300,

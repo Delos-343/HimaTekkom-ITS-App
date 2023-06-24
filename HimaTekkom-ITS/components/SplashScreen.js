@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     width: 300, 
     height: 300,
     resizeMode: 'contain',
+    marginBottom: 25,
   },
   title: {
     fontSize: 30,
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     letterSpacing: 3,
     color: '#0c0c0c',
-    marginVertical: 50,
+    marginTop: 50,
   },
 });
 
