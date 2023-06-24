@@ -18,6 +18,8 @@ const Screen3 = () => {
     try {
       if (sound === null) {
         const { sound: newSound } = await Audio.Sound.createAsync(
+            // https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3
+            // https://digital.danubestreamwaves.org/wp-content/uploads/2021/03/BFR-API1.mp4
           { uri: 'https://sv3.alhasmedia.com/listen/station_34/radio' },
           { shouldPlay: true }
         );
@@ -119,7 +121,7 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   button: {
-    borderRadius: 100,
+    borderRadius: 10,
     width: 75,
     height: 75,
     alignItems: 'center',
@@ -130,7 +132,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     color: '#F1F1F1',
-    alignSelf: 'center',
+    alignText: 'center',
   },
 });
 

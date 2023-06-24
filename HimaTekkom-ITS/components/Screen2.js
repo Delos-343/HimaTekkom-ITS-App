@@ -79,9 +79,6 @@ const Screen2 = () => {
         <TouchableOpacity onPress={handlePreviousPage} disabled={activePage === 0}>
           <Text style={[styles.paginationButton, { marginRight: 10 }]}>{'<'}</Text>
         </TouchableOpacity>
-        <View style={styles.paginationDots}>
-          { dots }
-        </View>
         <TouchableOpacity onPress={handleNextPage} disabled={activePage === length - 1}>
           <Text style={styles.paginationButton}>{'>'}</Text>
         </TouchableOpacity>
@@ -132,25 +129,17 @@ const styles = StyleSheet.create({
       marginBottom: 17,
     },
     paginationButton: {
-      fontSize: 50,
+      borderRadius: 10,
+      width: 50,
+      height: 50,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#000080',
+      fontSize: 33,
       fontWeight: 'bold',
-      color: '#0c0c0c',
+      color: '#f1f1f1',
       textAlign: 'center',
-    },
-    paginationDots: {
-      flexDirection: 'row',
-    },
-    dot: {
-      width: 10,
-      height: 10,
-      borderRadius: 5,
-      marginHorizontal: 10,
-    },
-    activeDot: {
-      backgroundColor: '#0c0c0c',
-    },
-    inactiveDot: {
-      backgroundColor: '#dcdcdc',
+      marginHorizontal: 50,
     },
 });
 
