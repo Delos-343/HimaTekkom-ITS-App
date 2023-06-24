@@ -26,7 +26,7 @@ const Screen3 = () => {
     try {
       if (sound === null) {
         const { sound: newSound } = await Audio.Sound.createAsync(
-          { uri: 'https://sv3.alhasmedia.com/listen/station_34/radio' },
+          { uri: 'https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3' },
           { shouldPlay: true }
         );
         setSound(newSound);
@@ -59,22 +59,22 @@ const Screen3 = () => {
       <Image source={require('../assets/logos/Logo_HimaTekkom-ITS.png')} style={styles.albumImage} />
       <Text style={styles.title}>HimaTekkom Radio</Text>
       <Text style={styles.artist}>ITS</Text>
-      <Slider
-        style={styles.slider}
-        minimumValue={0}
-        maximumValue={1}
-        value={volume}
-        onValueChange={handleVolumeChange}
-        minimumTrackTintColor="#000080"
-        maximumTrackTintColor="#000080"
-        thumbTintColor="#000080"
-      />
       <View style={styles.controls}>
         <TouchableOpacity onPress={isPlaying ? pauseSound : playSound}>
           <View style={styles.playButton}>
             <Text style={styles.playButtonText}>{isPlaying ? '❚❚' : '▶︎'}</Text>
           </View>
         </TouchableOpacity>
+        <Slider
+          style={styles.slider}
+          minimumValue={0}
+          maximumValue={1}
+          value={volume}
+          onValueChange={handleVolumeChange}
+          minimumTrackTintColor="#000080"
+          maximumTrackTintColor="#000080"
+          thumbTintColor="#000080"
+        />
       </View>
     </View>
   );
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
   albumImage: {
     width: 250,
     height: 250,
-    marginBottom: 20,
+    marginBottom: 75,
   },
   title: {
     color: '#FFA500',
@@ -101,15 +101,18 @@ const styles = StyleSheet.create({
   },
   artist: {
     color: '#2F4F4F',
-    fontSize: 20,
+    fontSize: 50,
+    fontWeight: '600',
     textAlign: 'center',
-    marginBottom: 20,
+    marginBottom: 50,
   },
   slider: {
-    width: '80%',
+    width: 300,
+    marginTop: 50,
   },
   controls: {
-    flexDirection: 'row',
+    width: '100%',
+    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
   },
