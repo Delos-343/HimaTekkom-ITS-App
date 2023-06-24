@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 import Screen1 from '../components/Screen1';
 import Screen2 from '../components/Screen2';
 import Screen3 from '../components/Screen3';
-import { Ionicons } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 
 
 const Tab = createBottomTabNavigator();
@@ -20,24 +20,20 @@ export default function HomeScreen({ navigation }) {
         },
         tabBarActiveTintColor: '#f1f1f1',
 
-        /*
         tabBarIcon: ({ color, size }) => {
 
           let iconName;
 
-          if (route.name === 'Home') {
-            iconName = 'home-outline';
-          } else if (route.name === 'News') {
-            iconName = 'newspaper-outline';
+          if (route.name === 'Beranda') {
+            iconName = 'home';
+          } else if (route.name === 'Berita') {
+            iconName = 'news';
           } else if (route.name === 'Radio') {
-            iconName = 'radio-outline';
-          } else if (route.name === 'Test') {
-            iconName = 'user-outline';
+            iconName = 'radio';
           }
 
-          return <Ionicons name={iconName} size={size} color={color} />;
+          return <Entypo name={iconName} size={size} color={color} />;
         },
-        */
 
       })}
     >
