@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import VideoDisplay from './VideoDisplay';
 
 export default function Screen1() {
@@ -11,8 +11,6 @@ export default function Screen1() {
         <View style={styles.videoContainer}>
           <VideoDisplay />
         </View>
-
-        <View style={styles.divider}></View>
 
         <Text style={styles.bodyText}>
           HIMATEKKOM ITS dilatarbelakangi oleh kondisi mahasiswa teknik komputer ITS yang masih dinaungi olehhimpunan
@@ -45,7 +43,7 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: 'bold',
     paddingHorizontal: 10,
-    marginBottom: 50,
+    marginBottom: 25,
     letterSpacing: 1.5,
     textAlign: 'center',
   },
@@ -55,13 +53,10 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     overflow: 'hidden', // Hide any overflowing content
   },
-  divider: {
-    marginTop: 25,
-  },
   bodyText: {
     color: '#0c0c0c',
     marginTop: 10,
-    fontSize: 17,
+    fontSize: 14,
     fontWeight: '500',
     textAlign: 'justify',
     paddingHorizontal: 10,

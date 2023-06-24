@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, Image, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const NewsItem = ({ route }) => {
@@ -13,23 +13,31 @@ const NewsItem = ({ route }) => {
           {'< KEMBALI KE BERITA'}
         </Text>
       </TouchableOpacity>
-      <Text style={styles.title}>
-        { item.title }
-      </Text>
-      <Image source={{ uri: item.image }} style={styles.image} />
-      <Text style={styles.date}>
-        25 / 06 / 2023 { item.date }
-      </Text>
-      <Text style={styles.content}>
-        { item.content }
-      </Text>
+      <View style={styles.frameContainer}>
+        <Text style={styles.title}>
+          { item.title }
+        </Text>
+        <Image source={{ uri: item.image }} style={styles.image} />
+        <Text style={styles.date}>
+          25 / 06 / 2023 { item.date }
+        </Text>
+        <Text style={styles.content}>
+          { item.content }
+        </Text>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    padding: 0,
+    flex: 1,
+  },
+  frameContainer: {
+    width: Dimensions.get('window').width,
+    alignItems: 'center',
+    paddingBottom: 20,
+    paddingHorizontal: 20,
   },
   goBackButton: {
     alignSelf: 'flex-start',
@@ -37,12 +45,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#000080',
     width: '100%',
     paddingHorizontal: 10,
+    paddingTop: 35,
+    paddingBottom: 20,
   },
   goBackButtonText: {
     color: '#f1f1f1',
     fontSize: 12,
     fontWeight: '500',
-    marginVertical: 17,
   },
   title: {
     fontSize: 30,
