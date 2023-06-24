@@ -14,9 +14,9 @@ const App = () => {
             <Stack.Screen name="SplashScreen" component={SplashScreen} />
             <Stack.Screen name="HomeScreen" component={HomeScreen} />
             
-            <Stack.Screen name="Screen1" component={Screen1} />
+            <Stack.Screen name="Screen1" component={Screen1} options={{ title: 'Beranda' }} />
             <Stack.Screen name="Screen2" component={Screen2}  options={{ title: 'Berita' }} />
-            <Stack.Screen name="Screen3" component={Screen3}  />
+            <Stack.Screen name="Screen3" component={Screen3} options={{ title: 'Radio' }}  />
 
             <Stack.Screen name="NewsItem" component={NewsItem} options={{ title: 'Detail Berita' }} />
 

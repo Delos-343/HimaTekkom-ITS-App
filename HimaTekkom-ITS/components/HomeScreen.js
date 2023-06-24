@@ -41,9 +41,30 @@ export default function HomeScreen({ navigation }) {
 
       })}
     >
-      <Tab.Screen name="BERANDA" component={Screen1} />
-      <Tab.Screen name="BERITA" component={Screen2} />
-      <Tab.Screen name="RADIO" component={Screen3} />
+      <Tab.Screen
+        name="Beranda"
+        component={Screen1}
+        options={{
+          tabBarStyle:{backgroundColor: '#0c0c0c', textAlign: 'center'},
+          tabBarLabelStyle:{color: '#f1f1f1'}
+        }}
+      />
+      <Tab.Screen
+        name="Berita"
+        component={Screen2}
+        options={{
+          tabBarStyle:{backgroundColor: '#0c0c0c', textAlign: 'center'},
+          tabBarLabelStyle:{color: '#f1f1f1'}
+        }}
+      />
+      <Tab.Screen
+        name="Radio"
+        component={Screen3}
+        options={{
+          tabBarStyle:{backgroundColor: '#0c0c0c', textAlign: 'center'},
+          tabBarLabelStyle:{color: '#f1f1f1'}
+        }}
+      />
 
     </Tab.Navigator>
   );
