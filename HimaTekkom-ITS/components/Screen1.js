@@ -1,33 +1,27 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image , Dimensions  } from 'react-native';
-import VideoDisplay from './VideoDisplay'
+import { View, Text, StyleSheet, Image, Dimensions } from 'react-native';
+import VideoDisplay from './VideoDisplay';
 
 export default function Screen1() {
-    
   return (
     <View style={styles.container}>
       <View style={styles.frameContainer}>
-        <Text style={styles.title}>
-          LIVE NOW
-        </Text>
-        
-        <VideoDisplay />
+        <Text style={styles.title}>LIVE NOW</Text>
+
+        <View style={styles.videoContainer}>
+          <VideoDisplay />
+        </View>
 
         <View style={styles.divider}></View>
 
         <Text style={styles.bodyText}>
-          HIMATEKKOM ITS dilatarbelakangi
-          oleh kondisi mahasiswa teknik komputer ITS yang
-          masih dinaungi oleh himpunan induk, HIMATEKTRO
-          ITS.
-        </Text>  
-        <Text style={styles.bodyText}>  
-          Adapun keresahan yang dimiliki oleh 
-          mahasiswa Teknik Komputer ITS antara lain isu
-          keprofesian, pengembangan mahasiswa, dan 
-          harmonisasi antar mahasiswa, serta cita-cita
-          bersama untuk dapat menaungi dan melayani
-          secara mandiri kebutuhan mahasiswanya.
+          HIMATEKKOM ITS dilatarbelakangi oleh kondisi mahasiswa teknik komputer ITS yang masih dinaungi oleh himpunan
+          induk, HIMATEKTRO ITS.
+        </Text>
+        <Text style={styles.bodyText}>
+          Adapun keresahan yang dimiliki oleh mahasiswa Teknik Komputer ITS antara lain isu keprofesian, pengembangan
+          mahasiswa, dan harmonisasi antar mahasiswa, serta cita-cita bersama untuk dapat menaungi dan melayani secara
+          mandiri kebutuhan mahasiswanya.
         </Text>
       </View>
     </View>
@@ -38,22 +32,28 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
   },
-  logo: {
-    width: '50%',
-    height: '50%',
-    resizeMode: 'contain',
+  frameContainer: {
+    width: Dimensions.get('window').width,
+    alignItems: 'center',
+    paddingBottom: 20,
+    paddingHorizontal: 20,
   },
   title: {
     fontSize: 40,
     fontWeight: 'bold',
-    margin: 'auto',
     paddingBottom: 50,
     paddingHorizontal: 10,
   },
-  divider:{
-    marginTop: 50,
+  videoContainer: {
+    width: '100%',
+    height: Dimensions.get('window').width * (9 / 16), // Adjust the aspect ratio as per your video dimensions
+    marginBottom: 10,
+    overflow: 'hidden', // Hide any overflowing content
+  },
+  divider: {
+    marginTop: 25,
   },
   bodyText: {
     color: 'black',
@@ -61,6 +61,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '500',
     textAlign: 'justify',
-    paddingHorizontal: '7%',
+    paddingHorizontal: 10,
   },
 });

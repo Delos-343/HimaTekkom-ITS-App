@@ -15,7 +15,7 @@ export default function VideoDisplay() {
   return (
     <View>
       <YoutubePlayer
-        height={'100%'}
+        height={250}
         play={playing}
         videoId={"QDia3e12czc"}
         onChangeState={onStateChange}

@@ -88,9 +88,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#eee',
   },
   albumImage: {
-    width: 250,
-    height: 250,
+    width: 325,
+    height: 325,
     marginBottom: 75,
+    resizeMode: 'contain',
   },
   title: {
     color: '#FFA500',
@@ -108,7 +109,7 @@ const styles = StyleSheet.create({
   },
   slider: {
     width: 300,
-    marginTop: 50,
+    marginTop: 30,
   },
   controls: {
     width: '100%',
