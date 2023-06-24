@@ -107,11 +107,12 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   artist: {
-    color: '#2F4F4F',
+    color: '#000080',
     fontSize: 50,
     fontWeight: '600',
     textAlign: 'center',
     marginBottom: 75,
+    letterSpacing: 3,
   },
   slider: {
     width: 300,
