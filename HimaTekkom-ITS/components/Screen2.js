@@ -79,7 +79,9 @@ const Screen2 = () => {
         <TouchableOpacity onPress={handlePreviousPage} disabled={activePage === 0}>
           <Text style={[styles.paginationButton, { marginRight: 10 }]}>{'<'}</Text>
         </TouchableOpacity>
-        <View style={styles.paginationDots}>{dots}</View>
+        <View style={styles.paginationDots}>
+          {dots}
+        </View>
         <TouchableOpacity onPress={handleNextPage} disabled={activePage === length - 1}>
           <Text style={styles.paginationButton}>{'>'}</Text>
         </TouchableOpacity>
