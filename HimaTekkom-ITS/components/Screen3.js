@@ -62,7 +62,9 @@ const Screen3 = () => {
       <View style={styles.controls}>
         <TouchableOpacity onPress={isPlaying ? pauseSound : playSound}>
           <View style={styles.playButton}>
-            <Text style={styles.playButtonText}>{isPlaying ? '❚❚' : '▶︎'}</Text>
+            <Text style={styles.playButtonText}>
+              { isPlaying ? '❚❚' : '▶︎' }
+            </Text>
           </View>
         </TouchableOpacity>
         <Slider

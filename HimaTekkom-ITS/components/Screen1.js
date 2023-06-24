@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   bodyText: {
     color: 'black',
     marginTop: 10,
-    fontSize: 14,
+    fontSize: 17,
     fontWeight: '500',
     textAlign: 'justify',
     paddingHorizontal: 10,

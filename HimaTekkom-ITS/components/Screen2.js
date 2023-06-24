@@ -39,12 +39,14 @@ const Screen2 = () => {
           />
           <View style={styles.newsreel}>
             <Text style={styles.title}>
-              {item.title}
+              { item.title }
             </Text>
             <Text style={styles.date}>
-              {new Date(item.createdAt).toLocaleDateString()}
+              { new Date(item.createdAt).toLocaleDateString() }
             </Text>
-            <Text numberOfLines={3}>{item.content}</Text>
+            <Text numberOfLines={3}>
+              { item.content }
+            </Text>
           </View>
         </View>
       </TouchableOpacity>

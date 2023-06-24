@@ -15,10 +15,10 @@ export default function HomeScreen({ navigation }) {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarStyle: {
-          backgroundColor: 'black',
-          padding: '1%',
+          backgroundColor: '#0c0c0c',
+          padding: '2%',
         },
-        tabBarActiveTintColor: 'white',
+        tabBarActiveTintColor: '#f1f1f1',
 
         /*
         tabBarIcon: ({ color, size }) => {
