@@ -1,6 +1,5 @@
 import React, { useState, useCallback, useRef } from "react";
-import { StyleSheet } from "react-native";
-import { Button, View, Alert } from "react-native";
+import { View, Alert } from "react-native";
 import YoutubePlayer from "react-native-youtube-iframe";
 
 export default function VideoDisplay() {
@@ -13,10 +12,6 @@ export default function VideoDisplay() {
     }
   }, []);
 
-  const togglePlaying = useCallback(() => {
-    setPlaying((prev) => !prev);
-  }, []);
-
   return (
     <View>
       <YoutubePlayer
@@ -25,13 +20,6 @@ export default function VideoDisplay() {
         videoId={"QDia3e12czc"}
         onChangeState={onStateChange}
       />
-      <Button title={playing ? "❚❚" : "▶︎"} onPress={togglePlaying} style={styles.btn} />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  btn: {
-    marginVertical: 8,
-  },
-});

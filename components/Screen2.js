@@ -16,7 +16,7 @@ const Screen2 = () => {
         const response = await axios.get('https://muhdaffawibi.com/news');
         const data = response.data;
         const pages = data.reduce((acc, item, index) => {
-          if (index % 5 === 0) acc.push([]);
+          if (index % 6 === 0) acc.push([]);
           acc[acc.length - 1].push(item);
           return acc;
         }, []);
@@ -52,6 +52,19 @@ const Screen2 = () => {
   };
 
   const Pagination = ({ length, activePage, setActivePage }) => {
+
+    const handleNextPage = () => {
+      if (activePage < length - 1) {
+        setActivePage(activePage + 1);
+      }
+    };
+
+    const handlePreviousPage = () => {
+      if (activePage > 0) {
+        setActivePage(activePage - 1);
+      }
+    };
+
     const dots = [];
     for (let i = 0; i < length; i++) {
       dots.push(
@@ -61,7 +74,17 @@ const Screen2 = () => {
       );
     }
 
-    return <View style={styles.paginationContainer}>{dots}</View>
+    return (
+      <View style={styles.paginationContainer}>
+        <TouchableOpacity onPress={handlePreviousPage} disabled={activePage === 0}>
+          <Text style={[styles.paginationButton, { marginRight: 10 }]}>{'<'}</Text>
+        </TouchableOpacity>
+        <View style={styles.paginationDots}>{dots}</View>
+        <TouchableOpacity onPress={handleNextPage} disabled={activePage === length - 1}>
+          <Text style={styles.paginationButton}>{'>'}</Text>
+        </TouchableOpacity>
+      </View>
+    );
   }
 
   return (
@@ -83,42 +106,50 @@ const Screen2 = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row',
-        marginVertical: 10,
+      flexDirection: 'row',
+      marginVertical: 10,
     },
     newsreel: {
-        flex: 1,
-        flexDirection: 'column',
-        width: 100,
+      flex: 1,
+      flexDirection: 'column',
+      width: 100,
     },
     title: {
-        fontSize: 16,
-        fontWeight: 'bold',
+      fontSize: 16,
+      fontWeight: 'bold',
     },
     date: {
-        fontSize: 12,
-        color: 'gray',
-        marginBottom: 5,
+      fontSize: 12,
+      color: 'gray',
+      marginBottom: 5,
     },
     paginationContainer: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'absolute',
-        bottom: 20,
-        alignSelf: 'center',
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginBottom: 17,
+    },
+    paginationButton: {
+      fontSize: 50,
+      fontWeight: 'bold',
+      color: '#0c0c0c',
+      textAlign: 'center',
+    },
+    paginationDots: {
+      flexDirection: 'row',
     },
     dot: {
-        height: 20,
-        width: 20,
-        borderRadius: 5,
-        marginHorizontal: 2,
-        backgroundColor: '#0C0C0C',
+      width: 10,
+      height: 10,
+      borderRadius: 5,
+      marginHorizontal: 10,
     },
     activeDot: {
-        backgroundColor: 'blue',
+      backgroundColor: '#0c0c0c',
     },
-     
-})
+    inactiveDot: {
+      backgroundColor: '#dcdcdc',
+    },
+});
 
 export default Screen2;

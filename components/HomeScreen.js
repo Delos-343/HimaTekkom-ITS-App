@@ -19,6 +19,8 @@ export default function HomeScreen({ navigation }) {
           padding: '1%',
         },
         tabBarActiveTintColor: 'white',
+
+        /*
         tabBarIcon: ({ color, size }) => {
 
           let iconName;
@@ -35,6 +37,8 @@ export default function HomeScreen({ navigation }) {
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
+        */
+
       })}
     >
       <Tab.Screen name="BERANDA" component={Screen1} />
