@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { Audio } from 'expo-av';
+import Slider from '@react-native-community/slider';
 
 const Screen3 = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -25,7 +26,7 @@ const Screen3 = () => {
     try {
       if (sound === null) {
         const { sound: newSound } = await Audio.Sound.createAsync(
-          { uri: ' https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3' },
+          { uri: 'https://sv3.alhasmedia.com/listen/station_34/radio' },
           { shouldPlay: true }
         );
         setSound(newSound);
@@ -49,12 +50,8 @@ const Screen3 = () => {
     }
   };
 
-  const decreaseVolume = () => {
-    setVolume((prevVolume) => Math.max(0, prevVolume - 0.1));
-  };
-
-  const increaseVolume = () => {
-    setVolume((prevVolume) => Math.min(1, prevVolume + 0.1));
+  const handleVolumeChange = (value) => {
+    setVolume(value);
   };
 
   return (
@@ -62,17 +59,21 @@ const Screen3 = () => {
       <Image source={require('../assets/logos/Logo_HimaTekkom-ITS.png')} style={styles.albumImage} />
       <Text style={styles.title}>HimaTekkom Radio</Text>
       <Text style={styles.artist}>ITS</Text>
-      <TouchableOpacity onPress={isPlaying ? pauseSound : playSound}>
-        <View style={styles.playButton}>
-          <Text style={styles.playButtonText}>{isPlaying ? '❚❚' : '▶︎'}</Text>
-        </View>
-      </TouchableOpacity>
+      <Slider
+        style={styles.slider}
+        minimumValue={0}
+        maximumValue={1}
+        value={volume}
+        onValueChange={handleVolumeChange}
+        minimumTrackTintColor="#000080"
+        maximumTrackTintColor="#000080"
+        thumbTintColor="#000080"
+      />
       <View style={styles.controls}>
-        <TouchableOpacity onPress={decreaseVolume}>
-          <Text style={styles.volumeButton}>-</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={increaseVolume}>
-          <Text style={styles.volumeButton}>+</Text>
+        <TouchableOpacity onPress={isPlaying ? pauseSound : playSound}>
+          <View style={styles.playButton}>
+            <Text style={styles.playButtonText}>{isPlaying ? '❚❚' : '▶︎'}</Text>
+          </View>
         </TouchableOpacity>
       </View>
     </View>
@@ -102,13 +103,15 @@ const styles = StyleSheet.create({
     color: '#2F4F4F',
     fontSize: 20,
     textAlign: 'center',
-    marginBottom: 40,
+    marginBottom: 20,
+  },
+  slider: {
+    width: '80%',
   },
   controls: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 20,
   },
   playButton: {
     borderRadius: 10,
@@ -123,12 +126,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#F1F1F1',
     textAlign: 'center',
-  },
-  volumeButton: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    color: '#000080',
-    paddingHorizontal: 20,
   },
 });
 
