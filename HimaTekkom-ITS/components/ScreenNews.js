@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   date: {
     fontSize: 17,
     fontWeight: '600',
-    color: '##0c0c0c',
+    color: 'grey',
     marginVertical: 25,
     paddingHorizontal: 10,
     textAlign: 'center',
