@@ -13,13 +13,10 @@ export default function Screen1() {
         </View>
 
         <Text style={styles.bodyText}>
-          HIMATEKKOM ITS dilatarbelakangi oleh kondisi mahasiswa teknik komputer ITS yang masih dinaungi olehhimpunan
-          induk, HIMATEKTRO ITS.
+          HIMATEKKOM ITS dilatarbelakangi oleh kondisi mahasiswa teknik komputer ITS yang masih dinaungi oleh himpunan induk, HIMATEKTRO ITS.
         </Text>
         <Text style={styles.bodyText}>
-          Adapun keresahan yang dimiliki oleh mahasiswa Teknik Komputer ITS antara lain isu keprofesian,pengembangan
-          mahasiswa, dan harmonisasi antar mahasiswa, serta cita-cita bersama untuk dapat menaungi danmelayani secara
-          mandiri kebutuhan mahasiswanya.
+          Adapun keresahan yang dimiliki oleh mahasiswa Teknik Komputer ITS antara lain isu keprofesian,pengembangan mahasiswa, dan harmonisasi antar mahasiswa, serta cita-cita bersama untuk dapat menaungi dan melayani secara mandiri kebutuhan mahasiswanya.
         </Text>
       </View>
     </View>
