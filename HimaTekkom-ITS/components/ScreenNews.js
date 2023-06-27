@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, Image, TouchableOpacity, StyleSheet, Dimensions, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const NewsItem = ({ route }) => {
@@ -7,25 +7,27 @@ const NewsItem = ({ route }) => {
   const { item } = route.params;
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.goBack()} style={styles.goBackButton}>
-        <Text style={styles.goBackButtonText}>
-          {'< KEMBALI KE BERITA'}
-        </Text>
-      </TouchableOpacity>
-      <View style={styles.frameContainer}>
-        <Text style={styles.title}>
-          { item.title }
-        </Text>
-        <Image source={{ uri: item.image }} style={styles.image} />
-        <Text style={styles.date}>
-          25 / 06 / 2023 { item.date }
-        </Text>
-        <Text style={styles.content}>
-          { item.content }
-        </Text>
+    <ScrollView>
+      <View style={styles.container}>
+        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.goBackButton}>
+          <Text style={styles.goBackButtonText}>
+            {'< KEMBALI KE BERITA'}
+          </Text>
+        </TouchableOpacity>
+        <View style={styles.frameContainer}>
+          <Text style={styles.title}>
+            { item.title }
+          </Text>
+          <Image source={{ uri: item.image }} style={styles.image} />
+          <Text style={styles.date}>
+            { new Date(item.createdAt).toLocaleDateString() }
+          </Text>
+          <Text style={styles.content}>
+            { item.content }
+          </Text>
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
