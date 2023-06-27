@@ -6,7 +6,9 @@ import axios from 'axios';
 const Screen2 = () => {
   
   const navigation = useNavigation();
+
   const [pages, setPages] = useState([]);
+  
   const [activePage, setActivePage] = useState(0);
 
   useEffect(() => {
