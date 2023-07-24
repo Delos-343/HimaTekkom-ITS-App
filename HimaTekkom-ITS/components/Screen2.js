@@ -17,7 +17,8 @@ const Screen2 = () => {
         {/* ANDROID:-  http://10.0.2.2:3000/news, http://192.168.0.103:3000/news */}
         const response = await axios.get('https://muhdaffawibi.com/news');
         const data = response.data;
-        const pages = data.reduce((acc, item, index) => {
+        const reversedData = data.reverse();
+        const pages = reversedData.reduce((acc, item, index) => {
           if (index % 6 === 0) acc.push([]);
           acc[acc.length - 1].push(item);
           return acc;

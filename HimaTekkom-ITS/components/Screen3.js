@@ -26,7 +26,7 @@ const Screen3 = () => {
     try {
       if (sound === null) {
         const { sound: newSound } = await Audio.Sound.createAsync(
-          { uri: 'https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3' },
+          { uri: 'https://sv3.alhasmedia.com/listen/station_34/radio' },
           { shouldPlay: true }
         );
         setSound(newSound);
