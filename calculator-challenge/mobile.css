@@ -1,0 +1,32 @@
+@media only screen and (max-width: 700px) {
+    /* Adjusting the overall size for smaller screens */
+    .all-component {
+        width: 300px; /* The original width for smaller screens */
+    }
+
+    .number-labels {
+        /* position: relative;
+        width: 40px; */
+        width: 100%;
+        font-size: 20px; /* Adjust font size if needed */
+        justify-content: space-between;
+        /* margin: -20px -80px 20px auto; Adjusted margin to push the slider to the right */
+        display: flex;
+    }
+
+    .number-labels span {
+        padding: 0; /* Ensures there's no extra padding */
+        margin: 0; /* Ensures there's no extra margin */
+    }
+
+    .theme-title {
+        margin-top: 10px;
+        margin-left: 60px; /* Add some spacing */
+        font-size: 20px;
+    }
+
+    .screen-calculator {
+        width: 85%;
+    }
+
+}

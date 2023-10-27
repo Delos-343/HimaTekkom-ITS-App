@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body class="body-all">
+    <div class="all-component">
+     <div class="head-calculator">
+        <div class="title-wrapper">
+            <h1 class="calc-title">calc</h1>
+            <h1 class="theme-title">THEME</h1>
+        </div>
+         <div class="wrap-head">
+            <div class="number-labels">
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+            </div>
+            <div class="head-slider">
+                <div class="button-slider"></div>  
+            </div>
+         </div>
+     </div>
+        <div class="screen-calculator"></div>
+        <div class="body-calculator">
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button class="button delete-btn">DEL</button>
+
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+            <button class="button">+</button>
+
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+            <button class="button">-</button>
+
+            <button class="button">.</button>
+            <button class="button">0</button>
+            <button class="button">/</button>
+            <button class="button">x</button>
+
+            <button class="button reset-btn" style="flex: 1 1 calc(50% - 10px);">reset</button>
+            <button class="button equal-btn" style="flex: 1 1 calc(50% - 10px);">=</button>
+        </div>
+    </div>
+
+    <script src="toggle-slider.js"></script>
+    <script src="calculate.js"></script>
+</body>
+
+</html>
